@@ -19,6 +19,16 @@
 
 4. Para establecer el título de la página dinamicamente en el navegador y etiquetas metatags, hemos agregado un ngOnInit() en cada ts de cada página.
 
+SEO Tags
+
+Petición HTTP que construye la metadata.
+
+Enlaces que muestren metadata
+
+Paginación híbrida
+
+Despliegues
+
 
 # Estructura de esta aplicación:
 
@@ -26,6 +36,7 @@
   1. Componente about
   2. Componente contact
   3. Componente pricing
+  4. Componente pokemons
 
 - Carpeta shared:
   1. Componente navbar
