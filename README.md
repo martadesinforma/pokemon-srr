@@ -3,6 +3,8 @@
  1. Clonar el proyecto
  2. Ejecutar ```npm install``` 
  3. Ejecutar la app ```ng serve -o```
+ 4. Para generar los archivos de producción lanzar `ng build`.
+ 5. Para levantar un servidor que maneje la renderización del lado del servidor lanzar `npm run serve:ssr:pokemon-ssr`.
 
 
 
@@ -20,3 +22,10 @@
 
 # Estructura de esta aplicación:
 
+- Carpeta pages:
+  1. Componente about
+  2. Componente contact
+  3. Componente pricing
+
+- Carpeta shared:
+  1. Componente navbar
