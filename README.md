@@ -36,7 +36,12 @@ Despliegues
   1. Componente about
   2. Componente contact
   3. Componente pricing
-  4. Componente pokemons
+  4. Componente pokemons 
+  5. Componente pokemon-list.skeleton (en la carpeta ui dentro de la carpeta pokemons)
+
+- Carpeta pokemons:
+  1. Componente pokemon-list
+  2. Componente pokemon-card
 
 - Carpeta shared:
   1. Componente navbar
