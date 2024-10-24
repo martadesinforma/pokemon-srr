@@ -1,7 +1,7 @@
 <div class="grid gap-3 grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
 
-   @for(pokemon of '123456789012'.split(''); track $index){ <!-- @for está iterando sobre una lista de pokémones representada por la cadena '123456789012' dividida en caracteres individuales. Se usa track $index para realizar el seguimiento de los elementos iterados por su índice  -->
-    <pokemon-card></pokemon-card> <!-- Dentro del ciclo, se renderiza un componente <pokemon-card> por cada iteración del ciclo. -->
+   @for(pokemon of pokemons(); track pokemon.id){ <!-- @for está iterando sobre una lista de pokémones recibido desde pokemons-page component. Se usa track pokemon.id para realizar el seguimiento de los elementos iterados por su id  -->
+    <pokemon-card [pokemon]="pokemon"></pokemon-card> <!-- Dentro del ciclo, se renderiza un componente <pokemon-card> por cada iteración del ciclo. -->
    }
 
 
