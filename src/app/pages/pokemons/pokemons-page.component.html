@@ -4,11 +4,11 @@
 <hr class="my-2">
 
 <!-- Condicionalmente tenemos que mostrar o el <pokemon-list> o el <pokemon-list-skeleton> -->
-@if(isLoading()) {
+
   <pokemon-list-skeleton></pokemon-list-skeleton> <!-- El skeleton es el contenido que el usuario ve mientras se carga una información -->
-}@else{
-  <pokemon-list></pokemon-list>
-}
+
+  <pokemon-list [pokemons]="pokemons()"></pokemon-list>
+
 
 
 
