@@ -1,22 +1,22 @@
 <h1 class="text-3xl">Listado de Pokemons</h1>
-<h2 class="text-xl">Página actual</h2>
+<h2 class="text-xl">Página actual {{currentPage()}}</h2>
 
 <hr class="my-2">
 
 <!-- Condicionalmente tenemos que mostrar o el <pokemon-list> o el <pokemon-list-skeleton> -->
-
-  <pokemon-list-skeleton></pokemon-list-skeleton> <!-- El skeleton es el contenido que el usuario ve mientras se carga una información -->
-
-  <pokemon-list [pokemons]="pokemons()"></pokemon-list>
-
+  @if(pokemons()) {
+    <pokemon-list [pokemons]="pokemons()"></pokemon-list>
+  }@else {
+    <pokemon-list-skeleton></pokemon-list-skeleton> <!-- El skeleton es el contenido que el usuario ve mientras se carga una información -->
+  }
 
 
 
 <div class="flex justify-between">
-  <button class="mt-2">
+  <button (click)="loadPokemons(-1)" class="mt-2"> <!-- para mostrar los 20 pokemons anteriores -->
     Anteriores
   </button>
-  <button class="mt-2">
+  <button (click)="loadPokemons(+1)" class="mt-2"> <!-- para mostrar los 20 pokemons posteriores -->
     Siguientes
   </button>
 </div>
