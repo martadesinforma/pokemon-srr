@@ -19,29 +19,36 @@
 
 4. Para establecer el título de la página dinamicamente en el navegador y etiquetas metatags, hemos agregado un ngOnInit() en cada ts de cada página.
 
-SEO Tags
+5. Uso de servicio. El método loadPage() definido en el servicio pokemons.service.ts se va a inyectar en el componente pokemons-page y el método loadPokemon() definido en el servicio pokemons.service.ts se va a inyectar en el componente pokemon-page. Como en el método loadPage() hemos inyectado HttpClient, en el archivo `app.config.ts` tenemos que agregar en los providers este código `provideHttpClient(withFetch())` para no tener un error por consola. 
 
-Petición HTTP que construye la metadata.
+6. Uso de input(): En el componente pokemons-page, el servicio nos retorna un array de simplePokemons que vamos a guardar en la variable pokemons (es una señal). Voy a  pasarle esta señal de pokemons a mi componente pokemon-list  mediante un input. En el pokemons-page.component.html hacemos la asociación: `<pokemon-list [pokemons]="pokemons()"></pokemon-list>`. Después vamos a hacer uso de este pokemons en el pokemon-list.component.html. Tambien voy a pasarle a mi componente pokemon-card el valor de pokemon mediante un input(). Este valor lo voy a recibir del pokemon-list.component.html. Después vamos a hacer uso de este pokemon en el pokemon-card.component.html.
 
-Enlaces que muestren metadata
+7. uso de queryParamMap (injectando ActivatedRoute) y del Router en el componente pokemons-page.
 
-Paginación híbrida
+8. Agregar una animación personalizada  en Tailwind CSS al modificar el archivo tailwind.config.js: Esta modificación en el archivo tailwind.config.js permite agregar una animación personalizada llamada fadeIn a tu proyecto. Luego vamos a conseguir agregar esta animacion escribiendo la clase animate-fadeIn en el selector que quiera, en este caso, en el div del pokemon-card.component.html
 
-Despliegues
+9. @let se utiliza para crear  variables en el html. Se va a utilizar en el pokemon-page.component.html
+
+
 
 
 # Estructura de esta aplicación:
 
 - Carpeta pages:
-  1. Componente about
-  2. Componente contact
-  3. Componente pricing
-  4. Componente pokemons 
-  5. Componente pokemon-list.skeleton (en la carpeta ui dentro de la carpeta pokemons)
+  1. Componente about-page
+  2. Componente contact-page
+  3. Componente pricing-page
+  4. Componente pokemon-page 
+  5. Componente pokemons-page 
+  6. Componente pokemon-list.skeleton (en la carpeta ui dentro de la carpeta pokemons)
 
 - Carpeta pokemons:
-  1. Componente pokemon-list
-  2. Componente pokemon-card
-
+  1. Componente pokemon-list (En la carpeta components)
+  2. Componente pokemon-card (En la carpeta components)
+  3. pokemons service (En la carpeta services)
+  4. simple-pokemon interface (En la carpeta interfaces)
+  5. pokemon-api.response.ts (En la carpeta interfaces)
+  6. pokemon.interface.ts (En la carpeta interfaces)
+  
 - Carpeta shared:
   1. Componente navbar
