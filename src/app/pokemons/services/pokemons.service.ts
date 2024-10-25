@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { SimplePokemon } from '../interfaces/simple-pokemon.interface';
 import { PokeAPIResponse } from '../interfaces/pokemon-api.response';
+import { Pokemon } from '../interfaces/pokemon.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PokemonsService {
  private http = inject(HttpClient);
 
 
- //Este método se encarga de cargar una página de Pokémones.
+ //Este método se encarga de cargar una página de Pokémones. Se va a llamar en el componente pokemons-page
  public loadPage(page:number): Observable<SimplePokemon[]> {
 //Validaciones
   if(page !== 0) { //cuando tenemos una página le restamos 1 porque cuando hago una peticion, la pagina con el numero 0 es la primera, ya tiene un valor, es decir, si  la peticion es esta: https://pokeapi.co/api/v2/pokemon?offset=0 (el 0 es la pagina) esto ya me devuelve una respuesta
@@ -36,6 +37,15 @@ export class PokemonsService {
     }),
     tap(console.log)
   )
+ };
 
- }
+
+  //Este método se encarga de cargar un pokemon en concreto. Se va a llamar en el componente pokemon-page
+  public loadPokemon(id: string):  Observable<Pokemon>  {
+    //petición http
+      //la respuesta a la petición HTTP GET a la API de PokeAPI va a ser de tipo Pokemon.
+      return this.http.get<Pokemon>( //Este return es el principal y devuelve el Observable generado por la llamada HTTP.
+        `https://pokeapi.co/api/v2/pokemon/${id}`
+      )
+     };
 }
