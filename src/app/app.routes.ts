@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'pokemons',
+    path: 'pokemons/page/:page',
     loadComponent: () => import('./pages/pokemons/pokemons-page.component'), //conseguimos escrbir de manera tan corta la importacion pq en el archivo .ts hemos escrito **default** despues del nombre de la clase. Angular necesita saber dónde en el DOM debe insertar este componente cuando la url sea  http://localhost:52951/pokemons. Aquí es donde entra en juego router-outlet. En este caso lo vamos a insertar en el app.component.html para que se muestre en la pagina principal. Podemos llegar hasta esta url cuando hacemos click en el enlace Pokemons del navbar.component.html
   },
   {
