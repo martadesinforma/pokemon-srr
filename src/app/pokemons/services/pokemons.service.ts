@@ -35,7 +35,6 @@ export class PokemonsService {
       }))
       return simplePokemons; //Este segundo return devuelve el array simplePokemons que luce de esta manera [{id: '1', name: 'bulbasaur'}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]. Se encuentra dentro de la función que se pasa al operador map()
     }),
-    tap(console.log)
   )
  };
 
