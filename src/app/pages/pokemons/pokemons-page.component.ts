@@ -48,11 +48,10 @@ export default class PokemonsPageComponent {
 
 
   public loadPokemons(page = 0) {
-    const pageToLoad = this.currentPage()! + page; //el valor de page se aumenta o se disminuye en 1 cuando haces click en el boton de anterior o siguinte del html
 
-    this.pokemonsService.loadPage(pageToLoad)
+    this.pokemonsService.loadPage(page)
       .pipe(
-        tap(() => this.title.setTitle(`Pokémons SSR - Page ${pageToLoad}`))
+        tap(() => this.title.setTitle(`Pokémons SSR - Page ${page}`))
       )
       .subscribe(pokemons => { //pokemons es un array de  simplePokemons que luce de esta manera [{id: '1', name: 'bulbasaur'}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
         this.pokemons.set(pokemons);
