@@ -29,6 +29,9 @@
 
 9. @let se utiliza para crear  variables en el html. Se va a utilizar en el pokemon-page.component.html
 
+10. SSG + SSR en Angular: Ahora que hemos cambiado la estructura de la URL a `/pokemons/page/:page`, el prerenderizado ya no puede tratar la URL como una ruta estática única (`/pokemons`). En lugar de ello, Angular interpreta `/pokemons/page/:page` como una ruta dinámica, que depende del valor `page` para decidir qué debe prerenderizar. Como el prerenderizado de SSG necesita rutas fijas (como `/pokemons/page/1`, `/pokemons/page/2`, etc.), Angular no sabe qué rutas específicas construir a menos que las especifiques explícitamente. Para hacer esa configuración, nosotros tenemos que crearnos un archivo llamado "routes.txt" en el root de nuestra aplicación, en el cual tenemos todas las rutas de los argumentos dinámicos. Angular va a verificar este archivo de "routes" y esos van a ser generados de manera estática. Esto le indicará a Angular que cree contenido estático para cada página específica, como `/pokemons/page/1`, `/pokemons/page/2`, y así sucesivamente. En el angular.json tambien tenemos que hacer una modificacion en el prerender.
+
+11. Construir archivo de Routes.txt dinámicamente: Vamos a crearnos una carpeta que se llame "scripts" en el root de mi proyecto. Dentro de "scripts" voy a crearme un nuevo archivo que se va a llamar "prerender-routes.js". Es un simple archivo de JavaScript. Ahora en el package.json añadimos un nuevo script y lo agregamos al build. Ahora si lanzamos el comando `ng build` por la consola del vsc,  en la carpeta de distribución  ya me ha hecho el prerendering de pokemons y vamos a ver como nos ha creado el prerender de los pokemons
 
 
 
@@ -52,3 +55,8 @@
   
 - Carpeta shared:
   1. Componente navbar
+
+- Carpeta scripts:
+  1. prerender-routes.js
+
+- routes.txt
