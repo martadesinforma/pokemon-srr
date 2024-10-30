@@ -33,7 +33,7 @@
 
 11. Construir archivo de Routes.txt dinámicamente: Vamos a crearnos una carpeta que se llame "scripts" en el root de mi proyecto. Dentro de "scripts" voy a crearme un nuevo archivo que se va a llamar "prerender-routes.js". Es un simple archivo de JavaScript. Ahora en el package.json añadimos un nuevo script y lo agregamos al build. Ahora si lanzamos el comando `ng build` por la consola del vsc,  en la carpeta de distribución  ya me ha hecho el prerendering de pokemons y vamos a ver como nos ha creado el prerender de los pokemons
 
-
+12. Testing: Hacemos testing en el componente app, app.routes, pokemon-card,
 
 # Estructura de esta aplicación:
 
