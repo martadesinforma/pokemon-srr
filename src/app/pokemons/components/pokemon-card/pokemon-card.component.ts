@@ -20,6 +20,4 @@ export class PokemonCardComponent {
     () =>
       `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.pokemon().id}.png`
   )
-
-
 }
