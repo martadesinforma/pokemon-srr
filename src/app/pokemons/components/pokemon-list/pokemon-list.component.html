@@ -2,11 +2,13 @@
 
    @for(pokemon of pokemons(); track pokemon.id){ <!-- @for está iterando sobre una lista de pokémones recibido desde pokemons-page component. Se usa track pokemon.id para realizar el seguimiento de los elementos iterados por su id  -->
     <pokemon-card [pokemon]="pokemon"></pokemon-card> <!-- Dentro del ciclo, se renderiza un componente <pokemon-card> por cada iteración del ciclo. -->
-   }
-
-
-  <!-- si no hay pokemon: -->
+   }@empty {
+    <!-- si no hay pokemon: -->
    <div class="col-span-5 text-center border-white h-28 flex justify-center items-center">
     No hay pokemons
    </div>
+   }
+
+
+
 </div>
